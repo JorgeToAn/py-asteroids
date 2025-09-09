@@ -5,6 +5,8 @@ from constants import *
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock()
+    dt = 0
     
     # Game loop
     color_black = "#000000"
@@ -14,6 +16,7 @@ def main():
                 return
         screen.fill(color_black)
         pygame.display.flip()
+        dt = clock.tick(FRAMERATE) / 1000
 
 
 if __name__ == "__main__":
